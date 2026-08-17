@@ -1,0 +1,9 @@
+/out/
+/out-crave/
+/.crave-toolchains/
+/.ggit/
+/dist/
+/anykernel3/Image
+/security/samsung/defex_lsm/defex_packed_rules.bin
+/security/samsung/defex_lsm/defex_packed_rules.inc
+/security/samsung/defex_lsm/pack_rules

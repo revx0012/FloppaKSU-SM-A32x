@@ -1,0 +1,51 @@
+name: Publish source bundle
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out kernel and KernelSU Next
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 1
+
+      - name: Verify pinned KernelSU Next revision
+        run: test "$(git -C KernelSU-Next rev-parse HEAD)" = a54e4fa46c6cc25bcaa055cf14d790194beffed8
+
+      - name: Create complete source archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          asset="$RUNNER_TEMP/MizoKSU-SM-A326B-source-cyb7-compat-v1.tar.gz"
+          tar -C "$GITHUB_WORKSPACE" \
+            --exclude='.git' \
+            --exclude='*/.git' \
+            --exclude='./out-crave' \
+            --exclude='./dist' \
+            --transform='s|^\./|MizoKSU-SM-A326B/|' \
+            -cf - . | gzip -1 > "$asset"
+          sha256sum "$asset" > "$asset.sha256"
+
+      - name: Publish GitHub Release asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag='source-cyb7-compat-v1'
+          asset="$RUNNER_TEMP/MizoKSU-SM-A326B-source-cyb7-compat-v1.tar.gz"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            gh release upload "$tag" "$asset" "$asset.sha256" --clobber
+          else
+            gh release create "$tag" "$asset" "$asset.sha256" \
+              --target "$GITHUB_SHA" \
+              --title 'MizoKSU A32X complete source bundle' \
+              --notes 'Complete SM-A326B kernel source bundle with the pinned KernelSU Next legacy source included. This is source code, not a flashable kernel.'
+          fi
