@@ -14,7 +14,7 @@ KernelSU-Next root for **Samsung Galaxy A32 5G** (`SM-A326(variant) / a32x`). Th
 
 ## Build Variants
 
-This repository contains two build variants of the same KernelSU-Next source
+This repository contains three build variants of the same KernelSU-Next source
 for the Samsung Galaxy A32 5G:
 
 - **Variant 1** (this) — earlier build, selinux not modified.
@@ -44,8 +44,8 @@ sudo apt update && sudo apt install -y \
   libssl-dev libelf-dev python3 zip unzip xz-utils
 
 # Clone
-git clone (https://github.com/revx0012/FloppaKSU-SM-A32x/edit/ksu1/README.md
-cd MizoKSU-SM-A326B
+git clone https://github.com/revx0012/FloppaKSU-SM-A32x
+cd FloppaKSU-SM-A32x
 
 # Build
 ./build_floppaksu_crave.sh
@@ -60,7 +60,7 @@ Output is written to `dist/`.
 3. Flash via KernelSU-Next Manager app, or via custom recovery (TWRP/OrangeFox)
 4. Reboot
 
-   **IMPORTANT!!! WHEN FLASHING FOR FIRST TIME, IF IT REBOOTS AGAIN WHEN BOOTING.. DO NOT PANIC! LET IT BOOT! This is completely normal, let it boot again. If it does not boot after waiting for 1 or 2 reboots then assume it is a bootloop and restore from your original boot.img, this may also happen even after flashing successfully but it depends.**  
+**IMPORTANT!!! WHEN FLASHING FOR FIRST TIME, IF IT REBOOTS AGAIN WHEN BOOTING.. DO NOT PANIC! LET IT BOOT! This is completely normal, let it boot again. If it does not boot after waiting for 1 or 2 reboots then assume it is a bootloop and restore from your original boot.img, this may also happen even after flashing successfully but it depends.**  
 
 ## Credits
 
