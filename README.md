@@ -28,9 +28,9 @@ configuration files are identical.
 
 ## Features
 
-- **KernelSU-Next root** — kernel-level su without Magisk/Zygisk
-- **Built-in drivers** — Wi-Fi, Bluetooth, GPS, FM radio drivers work just fine! (compiled from in-tree sources)
-- **No SUSFS** — this build does not include SUSFS integration
+- **KernelSU-Next root**: kernel-level su without Magisk/Zygisk
+- **Built-in drivers**: Wi-Fi, Bluetooth, GPS, FM radio drivers work just fine! (compiled from in-tree sources)
+- **No SUSFS**: this build does not include SUSFS integration
 
 ## Building
 
@@ -56,7 +56,7 @@ Output is written to `dist/`.
 ## Flashing
 
 1. Back up your original `boot.img`
-2. Download from releases & Copy the ZIP to your device
+2. Download from [releases](https://github.com/revx0012/FloppaKSU-SM-A32x/releases) & Copy the ZIP to your device
 3. Flash via custom recovery (TWRP/OrangeFox)
 4. Reboot
 
