@@ -1,4 +1,4 @@
-# KernelSU-Next Build A — Samsung Galaxy A32 5G
+# KernelSU-Next Variant A — Samsung Galaxy A32 5G
 
 KernelSU-Next root for **Samsung Galaxy A32 5G** (`SM-A326(variant) / a32x`). This is **ksu1 branch**, the earlier build variant.
 
