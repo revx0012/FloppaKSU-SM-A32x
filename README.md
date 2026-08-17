@@ -66,7 +66,7 @@ Output is written to `dist/`.
 
 - [KernelSU-Next](https://github.com/KernelSU-Next/KernelSU-Next) — kernel-level root for Android
 - [AnyKernel3](https://github.com/osm0sis/AnyKernel3) — flashable ZIP template
-- Samsung open-source kernel release for SM-A326B
+- Samsung open-source kernel release for A32 5G
 
 ## License
 
