@@ -1,7 +1,6 @@
-# KernelSU-Next Build B — Samsung Galaxy A32 5G
+# KernelSU-Next Variant B — Samsung Galaxy A32 5G
 
-KernelSU-Next root for **Samsung Galaxy A32 5G** (`SM-A326B` / `a32x`) on
-Android 13. This is **Build B** — the later build variant.
+KernelSU-Next root for **Samsung Galaxy A32 5G** (`SM-A326(variant) / a32x`). This is **Variant B**, the later build variant.
 
 | Property | Value |
 |----------|-------|
@@ -15,12 +14,12 @@ Android 13. This is **Build B** — the later build variant.
 
 ## Build Variants
 
-This repository contains two build variants of the same KernelSU-Next source
+This repository contains three build variants of the same KernelSU-Next source
 for the Samsung Galaxy A32 5G:
 
-- **Build A** (`copy`) — earlier build, `selinux_hide.c` at 13,994 bytes
-- **Build B** (this) — later build, `selinux_hide.c` at 13,840 bytes
-  (154-byte reduction, likely a fix or optimization to SELinux hide logic)
+- **Variant 1** (`ksu1`) — earlier build, selinux not modified.
+- **Variant 2** (this) — later build, selinux modified. (some adjusts to SELinux hide logic)
+- **Variant SUSFS** (`ksu-susfs`) KernelSU-Next with susfs implemented.
 
 The only code difference between the two builds is in
 `KernelSU-Next/kernel/feature/selinux_hide.c`. All other kernel source and
@@ -29,8 +28,7 @@ configuration files are identical.
 ## Features
 
 - **KernelSU-Next root** — kernel-level su without Magisk/Zygisk
-- **Built-in MTK connectivity** — Wi-Fi, Bluetooth, GPS, FM radio drivers
-  compiled from in-tree sources
+- **Built-in drivers** — Wi-Fi, Bluetooth, GPS, FM radio drivers work just fine! (compiled from in-tree sources)
 - **No SUSFS** — this build does not include SUSFS integration
 
 ## Building
@@ -44,9 +42,9 @@ sudo apt update && sudo apt install -y \
   git curl ca-certificates make bc bison flex \
   libssl-dev libelf-dev python3 zip unzip xz-utils
 
-# Clone (with KernelSU-Next submodule)
-git clone --recurse-submodules https://github.com/itzlalpekhlua/MizoKSU-SM-A326B.git
-cd MizoKSU-SM-A326B
+# Clone
+git clone https://github.com/revx0012/FloppaKSU-SM-A32x
+cd FloppaKSU-SM-A32x
 
 # Build
 ./build_floppaksu_crave.sh
@@ -60,6 +58,8 @@ Output is written to `dist/`.
 2. Copy the ZIP to your device
 3. Flash via KernelSU-Next Manager app, or via custom recovery (TWRP/OrangeFox)
 4. Reboot
+
+**IMPORTANT!!! WHEN FLASHING FOR FIRST TIME, IF IT REBOOTS AGAIN WHEN BOOTING.. DO NOT PANIC! LET IT BOOT! This is completely normal, let it boot again. If it does not boot after waiting for 1 or 2 reboots then assume it is a bootloop and restore from your original boot.img, this may also happen even after flashing successfully but it depends.**  
 
 ## Credits
 
