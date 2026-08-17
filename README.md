@@ -59,10 +59,9 @@ Output is written to `dist/`:
 ## Flashing
 
 1. Back up your original `boot.img`
-2. Copy the ZIP to your device
-3. Flash via KernelSU-Next Manager app, or via custom recovery (TWRP/OrangeFox)
+2. Download from releases & Copy the ZIP to your device
+3. Flash via custom recovery (TWRP/OrangeFox)
 4. Reboot
-
 
 **IMPORTANT!!! WHEN FLASHING FOR FIRST TIME, IF IT REBOOTS AGAIN WHEN BOOTING.. DO NOT PANIC! LET IT BOOT! This is completely normal, let it boot again. If it does not boot after waiting for 1 or 2 reboots then assume it is a bootloop and restore from your original boot.img, this may also happen even after flashing successfully but it depends.**  
 
