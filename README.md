@@ -44,8 +44,8 @@ sudo apt update && sudo apt install -y \
   libssl-dev libelf-dev python3 zip unzip xz-utils
 
 # Clone
-git clone https://github.com/revx0012/FloppaKSU-SM-A32x
-cd FloppaKSU-SM-A32x
+git clone https://github.com/revx0012/android_kernel_samsung_a32_5g
+cd android_kernel_samsung_a32_5g
 
 # Build
 ./build_floppaksu_crave.sh
@@ -56,7 +56,7 @@ Output is written to `dist/`.
 ## Flashing
 
 1. Back up your original `boot.img`
-2. Download from [releases](https://github.com/revx0012/FloppaKSU-SM-A32x/releases) & Copy the ZIP to your device
+2. Download from [releases](https://github.com/revx0012/android_kernel_samsung_a32_5g/releases) & Copy the ZIP to your device
 3. Flash via custom recovery (TWRP/OrangeFox)
 4. Reboot
 
