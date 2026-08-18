@@ -44,7 +44,7 @@ sudo apt update && sudo apt install -y \
   libssl-dev libelf-dev python3 zip unzip xz-utils
 
 # Clone
-git clone https://github.com/revx0012/android_kernel_samsung_a32_5g
+git clone https://github.com/revx0012/android_kernel_samsung_a32_5g -b ksu1
 cd android_kernel_samsung_a32_5g
 
 # Build
