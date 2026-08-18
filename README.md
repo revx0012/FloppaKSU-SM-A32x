@@ -43,8 +43,8 @@ sudo apt update && sudo apt install -y \
   libssl-dev libelf-dev python3 zip unzip xz-utils
 
 # Clone
-git clone https://github.com/revx0012/FloppaKSU-SM-A32x
-cd FloppaKSU-SM-A32x
+git clone https://github.com/revx0012/android_kernel_samsung_a32_5g -b ksu2
+cd android_kernel_samsung_a32_5g
 
 # Build
 ./build_floppaksu_crave.sh
